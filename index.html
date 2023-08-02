@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap');
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draw Pad</title>
@@ -8,15 +11,26 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <h1 id="pad-title">drawPad</h1>
     <div id="pad-container">
 
-        <div id="slider-container">
-            <div id="slider-value">16</div>
-            <input id="slider" type="range" min="1" max="64" value="16">
+        <div id="color-customization">
+            <input id="color-picker" type="color" value="#FCA311">
+            <div id="color-buttons">
+                <button class="color-button" id="color-mode">Color</button>
+                <button class="color-button" id="rainbow">Rainbow</button>
+                <button class="color-button" id="eraser">Eraser</button>
+            </div>
         </div>
 
-        <div id="pad"></div>
+        <div id="pad-slider-container">
+            <div id="pad"></div>
 
+            <div id="slider-container">
+                <input id="slider" type="range" min="1" max="64" value="16" step="1">
+                <div id="slider-value">16 x 16</div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
