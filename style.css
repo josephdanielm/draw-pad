@@ -99,6 +99,7 @@ body {
 #slider {
     width: 400px;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 #slider:focus {
