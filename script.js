@@ -26,7 +26,7 @@ function drawGrid(quantity) {
                 if (isDrawing == true) {
                     row.style.backgroundColor = currentColor;
                 }
-            }    
+            }
             column.appendChild(row);
         }
         document.getElementById('pad').appendChild(column);
@@ -48,11 +48,15 @@ colorPicker.oninput = function() {
 // Draw Effect on/off
 let isDrawing = false;
 
-document.onmousedown = function(){isDrawing = true
-console.log('mouse is down')};
 
-document.onmouseup = function(){isDrawing = false
-console.log('mouse is up')};
+pad.onclick = function() {
+    if (isDrawing == false) {
+        isDrawing = true;
+    } else if (isDrawing == true) {
+        isDrawing = false;
+    }
+}
+
 
 pad.onmouseleave = function(){isDrawing = false}
 
