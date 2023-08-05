@@ -20,6 +20,13 @@ function drawGrid(quantity) {
         for (j = 0; j < quantity; ++j) {
             const row = document.createElement('div');
             row.setAttribute('class', 'padDiv');
+
+            // Draw-Effect
+            row.onmousemove = function() {
+                if (isDrawing == true) {
+                    row.style.backgroundColor = currentColor;
+                }
+            }    
             column.appendChild(row);
         }
         document.getElementById('pad').appendChild(column);
@@ -38,14 +45,15 @@ colorPicker.oninput = function() {
 }
 
 
-// Draw Effect
-
-const padDivs = document.querySelectorAll('padDiv');
+// Draw Effect on/off
 let isDrawing = false;
 
-pad.onmousedown = function(){isDrawing = true
+document.onmousedown = function(){isDrawing = true
 console.log('mouse is down')};
 
-pad.onmouseup = function(){isDrawing = false
+document.onmouseup = function(){isDrawing = false
 console.log('mouse is up')};
 
+pad.onmouseleave = function(){isDrawing = false}
+
+document.body.setAttribute('draggable', 'false'); // Prevents bugs with dragging pad divs
