@@ -22,9 +22,21 @@ function drawGrid(quantity) {
             row.setAttribute('class', 'padDiv');
 
             // Draw-Effect
-            row.onmousemove = function() {
+            row.onmouseenter = function() {
                 if (isDrawing == true) {
-                    row.style.backgroundColor = currentColor;
+                    if (colorBtn.classList.contains('selected')) {
+
+                        row.style.backgroundColor = currentColor;
+
+                    }else if (rainbowBtn.classList.contains('selected')) {
+
+                        row.style.backgroundColor = randomColor();
+
+                    }else if (eraserBtn.classList.contains('selected')) {
+
+                        row.style.backgroundColor = ('#F6FFF8');
+
+                    }
                 }
             }
             column.appendChild(row);
@@ -44,6 +56,13 @@ colorPicker.oninput = function() {
     currentColor = this.value;
 }
 
+// Random Color
+function randomColor() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
 
 // Draw Effect on/off
 let isDrawing = false;
@@ -70,3 +89,28 @@ let clearPad = function() {
 
 const clearBtn = document.querySelector('#clear');
 clearBtn.addEventListener('click', clearPad);
+
+
+// Button Handling
+
+const colorBtn = document.getElementById('color-mode');
+const rainbowBtn = document.getElementById('rainbow');
+const eraserBtn = document.getElementById('eraser');
+
+function handleButtonSelection(selectedButton) {
+    colorBtn.classList.remove('selected');
+    rainbowBtn.classList.remove('selected');
+    eraserBtn.classList.remove('selected');
+
+    selectedButton.classList.add('selected');
+}
+
+colorBtn.addEventListener('click', function () {
+    handleButtonSelection(this);
+})
+rainbowBtn.addEventListener('click', function () {
+    handleButtonSelection(this);
+})
+eraserBtn.addEventListener('click', function () {
+    handleButtonSelection(this);
+})

@@ -38,6 +38,7 @@ body {
     margin-bottom: 200px;
     padding: 10px;
     gap: 10px;
+    box-shadow: 10px 10px var(--colorTwo);
 }
 
 #color-customization {
@@ -75,12 +76,25 @@ body {
     font-size: 25px;
     font-family: 'Josefin Sans';
     font-weight: 400;
-    border: 0px;
+    border: 2px solid var(--colorThree);
     border-radius: 8px;
     padding: 10px 15px;
     background-color: var(--colorOne);
     color: var(--colorThree);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
 }
+
+.color-button:hover {
+    transform: scale(1.2);
+}
+
+#clear:active {
+    background-color: var(--colorThree);
+    color: var(--colorOne);
+}
+
 
 #pad-slider-container {
     display: flex;
@@ -160,4 +174,11 @@ body {
 
 .padDiv {
     flex: 1;
+}
+
+/* Button Selection */
+
+.selected {
+    background-color: var(--colorThree);
+    color: var(--colorOne);
 }
