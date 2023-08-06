@@ -23,8 +23,9 @@ html,
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin: 0;
     background-color: var(--colorFour);
 }
 
@@ -32,6 +33,7 @@ body {
     color: var(--colorThree);
     font-size: 96px;
     margin-bottom: 0;
+    margin-top: 0;
     font-weight: 200;
 }
 
@@ -41,9 +43,9 @@ body {
     align-items: center;
     background-color: var(--colorFive);
     border-radius: 8px;
-    width: 750px;
-    height: 650px;
-    margin-bottom: 100px;
+    width: 700px;
+    height: 600px;
+    margin-bottom: 75px;
     padding: 10px;
     gap: 10px;
     box-shadow: 10px 10px var(--colorTwo);
@@ -117,7 +119,7 @@ body {
 
 /* Getting rid of main default styling */
 #slider {
-    width: 550px;
+    width: 500px;
     -webkit-appearance: none;
     appearance: none;
 }
@@ -169,8 +171,8 @@ body {
 #pad {
     display: flex;
     border: 3px solid var(--colorOne);
-    width: 550px;
-    height: 550px;
+    width: 500px;
+    height: 500px;
 }
 
 .column {
@@ -188,4 +190,16 @@ body {
 .selected {
     background-color: var(--colorThree);
     color: var(--colorOne);
+}
+
+/* Footer */
+
+#footer {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    width: 210px;
+    height: 30px;
+    background-color: var(--colorFive);
+    border-radius: 6px 6px 0px 0px;
 }
