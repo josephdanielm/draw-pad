@@ -10,8 +10,15 @@ body,
 html {
     height: 100%;
     width: 100%;
-    font-family: 'Josefin Sans', sans-serif;
 }
+
+body,
+html,
+.color-button,
+#slider {
+    font-family: 'Poppins', sans-serif;
+}
+
 
 body {
     display: flex;
@@ -25,6 +32,7 @@ body {
     color: var(--colorThree);
     font-size: 96px;
     margin-bottom: 0;
+    font-weight: 200;
 }
 
 #pad-container {
@@ -33,9 +41,9 @@ body {
     align-items: center;
     background-color: var(--colorFive);
     border-radius: 8px;
-    width: 700px;
-    height: 550px;
-    margin-bottom: 200px;
+    width: 750px;
+    height: 650px;
+    margin-bottom: 100px;
     padding: 10px;
     gap: 10px;
     box-shadow: 10px 10px var(--colorTwo);
@@ -74,7 +82,6 @@ body {
 
 .color-button {
     font-size: 25px;
-    font-family: 'Josefin Sans';
     font-weight: 400;
     border: 2px solid var(--colorThree);
     border-radius: 8px;
@@ -110,7 +117,7 @@ body {
 
 /* Getting rid of main default styling */
 #slider {
-    width: 400px;
+    width: 550px;
     -webkit-appearance: none;
     appearance: none;
 }
@@ -162,8 +169,8 @@ body {
 #pad {
     display: flex;
     border: 3px solid var(--colorOne);
-    width: 400px;
-    height: 400px;
+    width: 550px;
+    height: 550px;
 }
 
 .column {
