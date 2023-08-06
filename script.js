@@ -61,3 +61,12 @@ pad.onclick = function() {
 pad.onmouseleave = function(){isDrawing = false}
 
 document.body.setAttribute('draggable', 'false'); // Prevents bugs with dragging pad divs
+
+
+let clearPad = function() {
+    document.getElementById('pad').replaceChildren();
+    drawGrid(sliderValue);
+}
+
+const clearBtn = document.querySelector('#clear');
+clearBtn.addEventListener('click', clearPad);
